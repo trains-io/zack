@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- zack_v1alpha1_z21.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples
