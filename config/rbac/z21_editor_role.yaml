@@ -14,7 +14,7 @@ metadata:
   name: z21-editor-role
 rules:
 - apiGroups:
-  - zack.my.domain
+  - zack.trains.io
   resources:
   - z21s
   verbs:
@@ -26,7 +26,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - zack.my.domain
+  - zack.trains.io
   resources:
   - z21s/status
   verbs:

@@ -3,7 +3,7 @@
 # and allow the plugins properly work.
 # More info: https://book.kubebuilder.io/reference/project-config.html
 cliVersion: 4.9.0
-domain: my.domain
+domain: trains.io
 layout:
 - go.kubebuilder.io/v4
 projectName: zack
@@ -13,7 +13,7 @@ resources:
     crdVersion: v1
     namespaced: true
   controller: true
-  domain: my.domain
+  domain: trains.io
   group: zack
   kind: Z21
   path: github.com/trains.io/zack/api/v1alpha1

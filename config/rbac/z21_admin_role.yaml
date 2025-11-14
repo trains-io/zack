@@ -14,13 +14,13 @@ metadata:
   name: z21-admin-role
 rules:
 - apiGroups:
-  - zack.my.domain
+  - zack.trains.io
   resources:
   - z21s
   verbs:
   - '*'
 - apiGroups:
-  - zack.my.domain
+  - zack.trains.io
   resources:
   - z21s/status
   verbs:

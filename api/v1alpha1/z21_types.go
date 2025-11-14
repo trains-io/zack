@@ -30,15 +30,18 @@ type Z21Spec struct {
 	// The following markers will use OpenAPI v3 schema to validate the value
 	// More info: https://book.kubebuilder.io/reference/markers/crd-validation.html
 
-	// foo is an example field of Z21. Edit z21_types.go to remove/update
-	// +optional
-	Foo *string `json:"foo,omitempty"`
+	// URL is the Z21 control center host address
+	// +required
+	URL string `json:"url"`
 }
 
 // Z21Status defines the observed state of Z21.
 type Z21Status struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+
+	// Reachable status indicates whether Z21 control center is online or not
+	Reachable bool `json:"reachable"`
 
 	// For Kubernetes API conventions, see:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#typical-status-properties
@@ -75,7 +78,7 @@ type Z21 struct {
 
 	// status defines the observed state of Z21
 	// +optional
-	Status Z21Status `json:"status,omitempty,omitzero"`
+	Status Z21Status `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true

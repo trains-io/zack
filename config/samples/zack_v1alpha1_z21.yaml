@@ -1,9 +1,9 @@
-apiVersion: zack.my.domain/v1alpha1
+apiVersion: zack.trains.io/v1alpha1
 kind: Z21
 metadata:
   labels:
-    app.kubernetes.io/name: zack
+    app.kubernetes.io/name: z21-gateway
     app.kubernetes.io/managed-by: kustomize
-  name: z21-sample
+  name: main
 spec:
-  # TODO(user): Add fields here
+  url: 192.168.2.6

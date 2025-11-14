@@ -35,6 +35,8 @@ import (
 	metricsserver "sigs.k8s.io/controller-runtime/pkg/metrics/server"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 
+	"github.com/nats-io/nats.go"
+
 	zackv1alpha1 "github.com/trains.io/zack/api/v1alpha1"
 	"github.com/trains.io/zack/internal/controller"
 	// +kubebuilder:scaffold:imports
@@ -160,7 +162,7 @@ func main() {
 		WebhookServer:          webhookServer,
 		HealthProbeBindAddress: probeAddr,
 		LeaderElection:         enableLeaderElection,
-		LeaderElectionID:       "4bc8baf1.my.domain",
+		LeaderElectionID:       "4bc8baf1.trains.io",
 		// LeaderElectionReleaseOnCancel defines if the leader should step down voluntarily
 		// when the Manager ends. This requires the binary to immediately end when the
 		// Manager is stopped, otherwise, this setting is unsafe. Setting this significantly
@@ -178,9 +180,16 @@ func main() {
 		os.Exit(1)
 	}
 
+	nc, err := nats.Connect("nats://localhost:4222")
+	if err != nil {
+		setupLog.Error(err, "unable to connect NATS")
+		os.Exit(1)
+	}
+
 	if err := (&controller.Z21Reconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),
+		NATS:   nc,
 	}).SetupWithManager(mgr); err != nil {
 		setupLog.Error(err, "unable to create controller", "controller", "Z21")
 		os.Exit(1)
