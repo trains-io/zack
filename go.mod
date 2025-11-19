@@ -1,4 +1,4 @@
-module github.com/trains.io/zack
+module github.com/trains-io/zack
 
 go 1.24.5
 
