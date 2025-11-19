@@ -7,7 +7,7 @@ domain: trains.io
 layout:
 - go.kubebuilder.io/v4
 projectName: zack
-repo: github.com/trains.io/zack
+repo: github.com/trains-io/zack
 resources:
 - api:
     crdVersion: v1
@@ -16,6 +16,14 @@ resources:
   domain: trains.io
   group: zack
   kind: Z21
-  path: github.com/trains.io/zack/api/v1alpha1
+  path: github.com/trains-io/zack/api/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: trains.io
+  group: zack
+  kind: Detector
+  path: github.com/trains-io/zack/api/v1alpha1
   version: v1alpha1
 version: "3"
