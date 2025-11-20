@@ -37,8 +37,8 @@ import (
 
 	"github.com/nats-io/nats.go"
 
-	zackv1alpha1 "github.com/trains.io/zack/api/v1alpha1"
-	"github.com/trains.io/zack/internal/controller"
+	zackv1alpha1 "github.com/trains-io/zack/api/v1alpha1"
+	"github.com/trains-io/zack/internal/controller"
 	// +kubebuilder:scaffold:imports
 )
 

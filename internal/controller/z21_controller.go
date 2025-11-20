@@ -33,8 +33,8 @@ import (
 
 	"github.com/nats-io/nats.go"
 
-	zackv1alpha1 "github.com/trains.io/zack/api/v1alpha1"
-	"github.com/trains.io/zack/internal/common"
+	zackv1alpha1 "github.com/trains-io/zack/api/v1alpha1"
+	"github.com/trains-io/zack/internal/common"
 )
 
 // Z21Reconciler reconciles a Z21 object

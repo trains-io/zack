@@ -22,6 +22,9 @@ resources:
 # default, aiding admins in cluster management. Those roles are
 # not used by the zack itself. You can comment the following lines
 # if you do not want those helpers be installed with your Project.
+- detector_admin_role.yaml
+- detector_editor_role.yaml
+- detector_viewer_role.yaml
 - z21_admin_role.yaml
 - z21_editor_role.yaml
 - z21_viewer_role.yaml

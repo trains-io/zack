@@ -3,6 +3,7 @@
 # It should be run by config/default
 resources:
 - bases/zack.trains.io_z21s.yaml
+- bases/zack.trains.io_detectors.yaml
 # +kubebuilder:scaffold:crdkustomizeresource
 
 patches:
