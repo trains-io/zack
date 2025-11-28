@@ -90,7 +90,7 @@ type Detector struct {
 // DetectorList contains a list of Detector
 type DetectorList struct {
 	metav1.TypeMeta `json:",inline"`
-	metav1.ListMeta `json:"metadata,omitempty"`
+	metav1.ListMeta `json:"metadata"`
 	Items           []Detector `json:"items"`
 }
 

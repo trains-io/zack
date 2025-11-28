@@ -144,7 +144,7 @@ func (r *Z21Reconciler) ensureDeployment(ctx context.Context, z21 *zackv1alpha1.
 					Containers: []corev1.Container{
 						{
 							Name:  "z21-gateway",
-							Image: "ghcr.io/trains-io/z21-gateway:v0.1.4",
+							Image: "ghcr.io/trains-io/z21-gateway:v0.1.6",
 							Env: []corev1.EnvVar{
 								{Name: "Z21_NAME", Value: z21.Name},
 								{Name: "Z21_ADDR", Value: z21.Spec.URL},
